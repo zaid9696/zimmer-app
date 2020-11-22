@@ -1,0 +1,26 @@
+
+:root {
+
+  --primary-color: #FF304F;
+  --secondary-color: #28C7;
+  --third-color: #001227;
+}
+
+html {
+
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 62.2%;
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main{
+
+  display: grid;
+  grid-template-columns: [full-start] minmax(2rem,1fr) [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-start]) [center-end] minmax(2rem, 1fr) [full-end];
+}

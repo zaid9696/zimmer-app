@@ -1,23 +1,16 @@
 import logo from './logo.svg';
-import './App.css';
+// import demoAudio from './assets/audio/Interstellar.mp3';
+
+// import AudioPlayer from 'react-h5-audio-player';
+// import 'react-h5-audio-player/lib/styles.css';
+import './main.scss';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+        <h1>Zaid</h1>
     </div>
   );
 }
