@@ -2,7 +2,7 @@
 :root {
 
   --primary-color: #FF304F;
-  --secondary-color: #28C7;
+  --secondary-color: #28C7FA;
   --third-color: #001227;
 }
 
@@ -23,4 +23,6 @@ body {
 
   display: grid;
   grid-template-columns: [full-start] minmax(2rem,1fr) [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-start]) [center-end] minmax(2rem, 1fr) [full-end];
+  background-color: var(--third-color);
+  overflow: hidden;
 }

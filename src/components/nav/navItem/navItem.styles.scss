@@ -1,0 +1,24 @@
+
+.navItem {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    font-size: 2.4rem;
+    color: #b3b3b3;
+    text-decoration: none;
+    margin-left: 7rem;
+    transition: all 0.3s ease-in;
+    letter-spacing: 2px;
+    padding: 2px;
+    &.active {
+      color: #fff;
+      border-top: 1px solid var(--primary-color);
+      border-bottom: 1px solid;
+
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+}

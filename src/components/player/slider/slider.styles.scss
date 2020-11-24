@@ -1,0 +1,45 @@
+
+.slider {
+
+
+  margin: 0 8rem ;
+  margin-bottom: 15rem;
+
+  &__item {
+    outline: none;
+      &-content {
+        // margin: 0 2rem;
+        &:hover h3 {color: #fff}
+        width: 300px;
+        height: 300px;
+        cursor: pointer;
+        img{
+          width: 92%;
+           height:92%;
+           border-radius: 8px;
+            border: 1px solid #ff304f38;
+            box-shadow: 0 0 14px 1px #28c7fa1a;
+            margin: 11px;
+        }
+
+        h3 {
+          text-align: center;
+          color: #aba9a9;
+          font-weight: 500;
+          font-size: 2rem;
+          letter-spacing: 1px;
+          margin: 0 8px;
+          margin-top: 2rem;
+          transition: all 0.3s ease-in-out
+        }
+      }
+  }
+}
+
+// .slick-slide {
+//    margin-left:20px;
+// }
+//
+// .slick-list [data-slick-index="0"] {
+//     margin-left: 0;
+//   }
