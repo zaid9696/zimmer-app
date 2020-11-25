@@ -30,44 +30,47 @@ import whyCover from '../../assets/imgs/why.jpg';
 import codeCover from '../../assets/imgs/code.jpg';
 
 const playList = [
-  {name: 'Hans Zimmer - Interstellar - Main Theme', src: interstellarAudio, cover: interstellarCover},
-  {name: 'Hans Zimmer - Time', src: timeAudio, cover: timeCover},
-  {name: 'Hans Zimmer - Why do we fall', src: whyAudio, cover: whyCover},
-  {name: 'Hans Zimmer - Now we are free', src: gladiatorAudio, cover: gladiatorCover},
-  {name: 'Hans Zimmer - Moutains', src: moutainsAudio, cover: moutainsCover},
-  {name: "Hans Zimmer - Pirates of the Caribbean: Dead Man's Chest", src: piratesAudio, cover: piratesCover},
-  {name: 'Hans Zimmer - Flight', src: supermanAudio, cover: supermanCover},
-  {name: 'Hans Zimmer - The Dark Knight Main Theme', src: batmanAudio, cover: batmanCover},
-  {name: 'Hans Zimmer - Lost but won', src: rushAudio, cover: rushCover},
-  {name: 'Hans Zimmer - Chevaliers de Sangreal', src: codeAudio,cover: codeCover},
+  {name: 'Hans Zimmer - Interstellar - Main Theme', src: interstellarAudio, cover: interstellarCover, id: 0},
+  {name: 'Hans Zimmer - Time', src: timeAudio, cover: timeCover, id:1},
+  {name: 'Hans Zimmer - Why do we fall', src: whyAudio, cover: whyCover, id:2},
+  {name: 'Hans Zimmer - Now we are free', src: gladiatorAudio, cover: gladiatorCover, id: 3},
+  {name: 'Hans Zimmer - Moutains', src: moutainsAudio, cover: moutainsCover, id: 4},
+  {name: "Hans Zimmer - Pirates of the Caribbean: Dead Man's Chest", src: piratesAudio, cover: piratesCover, id: 5},
+  {name: 'Hans Zimmer - Flight', src: supermanAudio, cover: supermanCover, id: 6},
+  {name: 'Hans Zimmer - The Dark Knight Main Theme', src: batmanAudio, cover: batmanCover, id:7},
+  {name: 'Hans Zimmer - Lost but won', src: rushAudio, cover: rushCover, id:8},
+  {name: 'Hans Zimmer - Chevaliers de Sangreal', src: codeAudio,cover: codeCover, id: 9},
 ];
+
 
 const Player = () => {
 
   const [currentMusicIndex, setCurrentMusicIndex] = useState(0);
 
+
+
   const handleClickPrev = () => {
 
+    console.log(currentMusicIndex);
     setCurrentMusicIndex((prevState) => prevState === 0 ? playList.length - 1 : prevState - 1);
   }
 
   const handleClickNext = () => {
-
     setCurrentMusicIndex((prevState) => prevState < playList.length - 1 ? prevState + 1 : 0 );
   }
 
-  // const handleChangeAudio = () => {
-  //
-  //   setCurrentMusicIndex(3)
-  //
-  // }
+  const handleChangeAudio = (audioIndex) => {
+  
+    setCurrentMusicIndex(audioIndex);
+
+  }
   console.log(currentMusicIndex);
 
   return (
 
     <div>
 
-      <SliderCovers listPlay={playList} />
+      <SliderCovers Click={(audioIndex) => handleChangeAudio(audioIndex)} listPlay={playList} index={currentMusicIndex}/>
       <Musics handleClickNext={handleClickNext} handleClickPrev={handleClickPrev} playList={playList} currentMusicIndex={currentMusicIndex} />
 
     </div>
