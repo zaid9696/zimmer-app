@@ -1,7 +1,8 @@
 
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import SliderCovers from './slider/slider';
+import MusicSpinner from './musicSpinner/musicSpinner';
 import Musics from './musics/musics';
 
 import './player.styles.scss';
@@ -30,16 +31,16 @@ import whyCover from '../../assets/imgs/why.jpg';
 import codeCover from '../../assets/imgs/code.jpg';
 
 const playList = [
-  {name: 'Hans Zimmer - Interstellar - Main Theme', src: interstellarAudio, cover: interstellarCover, id: 0},
-  {name: 'Hans Zimmer - Time', src: timeAudio, cover: timeCover, id:1},
-  {name: 'Hans Zimmer - Why do we fall', src: whyAudio, cover: whyCover, id:2},
-  {name: 'Hans Zimmer - Now we are free', src: gladiatorAudio, cover: gladiatorCover, id: 3},
-  {name: 'Hans Zimmer - Moutains', src: moutainsAudio, cover: moutainsCover, id: 4},
-  {name: "Hans Zimmer - Pirates of the Caribbean: Dead Man's Chest", src: piratesAudio, cover: piratesCover, id: 5},
-  {name: 'Hans Zimmer - Flight', src: supermanAudio, cover: supermanCover, id: 6},
-  {name: 'Hans Zimmer - The Dark Knight Main Theme', src: batmanAudio, cover: batmanCover, id:7},
-  {name: 'Hans Zimmer - Lost but won', src: rushAudio, cover: rushCover, id:8},
-  {name: 'Hans Zimmer - Chevaliers de Sangreal', src: codeAudio,cover: codeCover, id: 9},
+  {name: 'Hans Zimmer - Interstellar - Main Theme', src: interstellarAudio, cover: interstellarCover, id: 0, duration: '4:08'},
+  {name: 'Hans Zimmer - Time', src: timeAudio, cover: timeCover, id:1, duration: '4:36'},
+  {name: 'Hans Zimmer - Why do we fall', src: whyAudio, cover: whyCover, id:2, duration: '2:02'},
+  {name: 'Hans Zimmer - Now we are free', src: gladiatorAudio, cover: gladiatorCover, id: 3,duration: '4:14'},
+  {name: 'Hans Zimmer - Moutains', src: moutainsAudio, cover: moutainsCover, id: 4,duration: '3:39'},
+  {name: "Hans Zimmer - Pirates of the Caribbean: Dead Man's Chest", src: piratesAudio, cover: piratesCover, id: 5,duration: '2:11'},
+  {name: 'Hans Zimmer - Flight', src: supermanAudio, cover: supermanCover, id: 6,duration: '4:13'},
+  {name: 'Hans Zimmer - The Dark Knight Main Theme', src: batmanAudio, cover: batmanCover, id:7, duration: '4:50'},
+  {name: 'Hans Zimmer - Lost but won', src: rushAudio, cover: rushCover, id:8,duration: '6:16'},
+  {name: 'Hans Zimmer - Chevaliers de Sangreal', src: codeAudio,cover: codeCover, id: 9,duration: '4:08'},
 ];
 
 
@@ -50,8 +51,6 @@ const playList = [
 const Player = () => {
 
   const [currentMusicIndex, setCurrentMusicIndex] = useState(null);
-
-
 
   const handleClickPrev = () => {
 
@@ -76,6 +75,7 @@ const Player = () => {
       <div className="slider__line"></div>
         <SliderCovers Click={(audioIndex) => handleChangeAudio(audioIndex)} listPlay={playList} index={currentMusicIndex}/>
       <div className="slider__line"></div>
+      <MusicSpinner playList={playList} musicIndex={currentMusicIndex}/>
       <Musics handleClickNext={handleClickNext} handleClickPrev={handleClickPrev} playList={playList} setMusic={setCurrentMusicIndex} currentMusicIndex={currentMusicIndex} />
 
     </div>

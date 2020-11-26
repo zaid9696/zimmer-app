@@ -1,5 +1,5 @@
 
-import React, {createRef} from 'react';
+import React from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 
 import './musics.styles.scss';
@@ -9,8 +9,6 @@ import 'react-h5-audio-player/lib/styles.css';
 
 const Musics = ({handleClickNext, handleClickPrev, playList, currentMusicIndex, setMusic}) =>{
 
-  const player = createRef();
-  console.log(player);
 
 return  (
   <div>

@@ -49,6 +49,7 @@ class SliderCovers extends React.Component  {
             <div key={i} onDoubleClick={() => Click(i)} className="slider__item">
             <div className="slider__item-content">
             <img src={item.cover} alt={item.name} />
+            <span className="slider__item-duration">{item.duration}</span>
             <h3>{item.name}</h3>
             </div>
             </div>

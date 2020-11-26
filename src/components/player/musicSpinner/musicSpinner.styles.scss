@@ -1,0 +1,28 @@
+
+.musicSpinner {
+
+  position: relative;
+  margin: 5rem 0;
+  text-align: center;
+
+  img {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    box-shadow: 0 0 16px 2px #28c7fa42;
+    border: 1px solid #28c7fa87;
+    animation-name: rotate-cover;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes rotate-cover {
+
+      0% {transform: rotateZ(1deg);}
+      100% {transform: rotateZ(360deg);}
+
+  }
+
+}
