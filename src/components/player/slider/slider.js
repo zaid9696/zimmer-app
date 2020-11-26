@@ -19,7 +19,7 @@ class SliderCovers extends React.Component  {
         if(this.props.index === 0) fakeIndex = 0;
 
        this.slider.slickGoTo(fakeIndex);
-       setTimeout(() => this.slider.slickGoTo(this.props.index) ,1050)
+       setTimeout(() => this.slider.slickGoTo(this.props.index) ,590);
 
   }
 
@@ -32,7 +32,7 @@ class SliderCovers extends React.Component  {
       infinite: true,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       focusOnSelect: true,
       arrows: false,
 
@@ -43,7 +43,6 @@ class SliderCovers extends React.Component  {
       return (
         <div className="slider">
 
-        <button onClick={() => this.handleSlickGoTo()}>SlideGoTo</button>
         <Slider ref={slider => (this.slider = slider)} {...settings}>
         {
           listPlay.map((item, i) => (

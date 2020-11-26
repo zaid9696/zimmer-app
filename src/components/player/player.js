@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import SliderCovers from './slider/slider';
 import Musics from './musics/musics';
@@ -43,16 +43,20 @@ const playList = [
 ];
 
 
+
+
+
+
 const Player = () => {
 
-  const [currentMusicIndex, setCurrentMusicIndex] = useState(0);
+  const [currentMusicIndex, setCurrentMusicIndex] = useState(null);
 
 
 
   const handleClickPrev = () => {
 
-    console.log(currentMusicIndex);
-    setCurrentMusicIndex((prevState) => prevState === 0 ? playList.length - 1 : prevState - 1);
+    // console.log(currentMusicIndex);
+    setCurrentMusicIndex((prevState) => prevState === 0 || prevState === null ? playList.length - 1 : prevState - 1);
   }
 
   const handleClickNext = () => {
@@ -60,18 +64,19 @@ const Player = () => {
   }
 
   const handleChangeAudio = (audioIndex) => {
-  
+
+
     setCurrentMusicIndex(audioIndex);
 
   }
-  console.log(currentMusicIndex);
 
   return (
 
-    <div>
-
-      <SliderCovers Click={(audioIndex) => handleChangeAudio(audioIndex)} listPlay={playList} index={currentMusicIndex}/>
-      <Musics handleClickNext={handleClickNext} handleClickPrev={handleClickPrev} playList={playList} currentMusicIndex={currentMusicIndex} />
+    <div className="player">
+      <div className="slider__line"></div>
+        <SliderCovers Click={(audioIndex) => handleChangeAudio(audioIndex)} listPlay={playList} index={currentMusicIndex}/>
+      <div className="slider__line"></div>
+      <Musics handleClickNext={handleClickNext} handleClickPrev={handleClickPrev} playList={playList} setMusic={setCurrentMusicIndex} currentMusicIndex={currentMusicIndex} />
 
     </div>
 
