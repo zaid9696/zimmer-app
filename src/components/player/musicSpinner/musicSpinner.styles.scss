@@ -5,12 +5,52 @@
   margin: 5rem 0;
   text-align: center;
 
+  &__line {
+    width: 119%;
+    height: 2px;
+    position: absolute;
+    bottom: 163px;
+    &-left {
+        left: -193px;
+        transform: rotateZ(-17deg);
+        background-color: var(--secondary-color);
+    }
+
+    &-right{
+      transform: rotateZ(17deg);
+      right: -193px;
+      background-color: var(--primary-color);
+    }
+
+    &-tight {
+      background-color: aliceblue;
+      z-index: 0;
+      transform: rotateZ(-18deg);
+      bottom: 338px;
+      background-color: var(--secondary-color);
+      &-right{
+        bottom: 329px;
+        right: 46%;
+        transform: rotateZ(18deg);
+        background-color: var(--primary-color);
+
+      }
+    }
+  }
+
   img {
     width: 330px;
     height: 330px;
     border-radius: 50%;
     box-shadow: 0 0 16px 2px #28c7fa42;
     border: 1px solid #28c7fa87;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+    z-index: 1;
+
+  }
+
+  .musicSpinner__spinnerPlaying {
     animation-name: rotate-cover;
     animation-duration: 12s;
     animation-timing-function: linear;
@@ -18,11 +58,34 @@
     animation-iteration-count: infinite;
   }
 
+  .musicSpinner__spinnerPause {
+    animation-name: rotate-pause;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
   @keyframes rotate-cover {
 
       0% {transform: rotateZ(1deg);}
       100% {transform: rotateZ(360deg);}
 
+  }
+  @keyframes rotate-pause {
+
+      0% {transform: rotateZ(50deg);}
+      100% {transform: rotateZ(1deg);}
+
+  }
+
+  & &__title-pause {
+    color: #757575
+  }
+  h3 {
+    color: white;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    transition: all 1s ease-in-out;
   }
 
 }

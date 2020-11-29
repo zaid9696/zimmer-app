@@ -10,11 +10,18 @@ class SliderCovers extends React.Component  {
 
   componentDidUpdate(prevProps, prevState) {
 
-      this.handleSlickGoTo();
+
+        if(prevProps.index !== this.props.index){
+
+              this.handleSlickGoTo();
+        }
+
+
   }
 
   handleSlickGoTo =  () => {
 
+        console.log(this.props.index);
         let fakeIndex = this.props.index - 1;
         if(this.props.index === 0) fakeIndex = 0;
 

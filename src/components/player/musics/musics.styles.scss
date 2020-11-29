@@ -1,0 +1,76 @@
+
+.musics {
+
+  width: 70%;
+  margin: auto;
+  margin-bottom: 8rem;
+
+  .rhap_container {
+
+    background-color: #28c7fa0a;
+    box-shadow: 0 0 5px 0 #28c7fa3d;
+  }
+
+  .rhap_progress-filled {
+
+    background-color: var(--primary-color);
+
+  }
+
+  .rhap_progress-indicator {
+
+    background: #ff3050;
+    box-shadow: #ff3050 0 0 5px;
+
+  }
+
+  .rhap_download-progress {
+
+    background-color: #28c7fa3b;
+  }
+
+  .rhap_progress-bar-show-download {
+    background-color: #00122787;
+  }
+
+
+  button[aria-label="Previous"] {
+
+    right:15px;
+
+  }
+
+  button[aria-label="Skip"] {
+
+    left:15px;
+
+  }
+
+  .rhap_volume-bar {
+    background-color: var(--primary-color);
+  }
+
+  .rhap_volume-indicator {
+    background-color: var(--secondary-color);
+    box-shadow: #28c7fa 0 0 3px;
+  }
+
+  .rhap_time {color: #cacaca;}
+
+  .rhap_main-controls-button {
+    width: 55px;
+    height: 55px;
+    position: relative;
+    img {
+
+      width: 90%;
+      height: 90%;
+
+      &.arrows {
+        width: 77%;
+        height: 77%;
+      }
+// box-shadow: 0 0 5px 0 #ff305054;
+    }
+  }
+}

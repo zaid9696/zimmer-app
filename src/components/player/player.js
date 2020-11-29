@@ -51,6 +51,13 @@ const playList = [
 const Player = () => {
 
   const [currentMusicIndex, setCurrentMusicIndex] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handleIsPlaying = (falseOrTrue) => {
+
+      setIsPlaying(falseOrTrue);
+      console.log(isPlaying);
+  }
 
   const handleClickPrev = () => {
 
@@ -75,8 +82,8 @@ const Player = () => {
       <div className="slider__line"></div>
         <SliderCovers Click={(audioIndex) => handleChangeAudio(audioIndex)} listPlay={playList} index={currentMusicIndex}/>
       <div className="slider__line"></div>
-      <MusicSpinner playList={playList} musicIndex={currentMusicIndex}/>
-      <Musics handleClickNext={handleClickNext} handleClickPrev={handleClickPrev} playList={playList} setMusic={setCurrentMusicIndex} currentMusicIndex={currentMusicIndex} />
+      <MusicSpinner isPlaying={isPlaying} playList={playList} musicIndex={currentMusicIndex}/>
+      <Musics setIsPlaying={handleIsPlaying} handleClickNext={handleClickNext} handleClickPrev={handleClickPrev} playList={playList} setMusic={setCurrentMusicIndex} currentMusicIndex={currentMusicIndex} />
 
     </div>
 
