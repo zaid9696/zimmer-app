@@ -1,5 +1,5 @@
 
-.slick-active.slick-current {
+.slider__active {
 
   .slider__item-content {
 
@@ -21,7 +21,6 @@
 
 
   margin: 0 8rem ;
-  touch-action: manipulation;
   @media screen and (max-width: 630px) {margin: 0 2rem;}
   &__line {
     width: 100%;
@@ -33,6 +32,8 @@
 
   &__item {
     outline: none;
+
+    transition: all 0.3s ease-in-out;
     &-duration {
       position: absolute;
       bottom: 37px;
@@ -54,9 +55,11 @@
       &-content {
         // margin: 0 2rem;
         position: relative;
-        &:hover h3 {color: #fff}
         width: 300px;
         height: 300px;
+        ::selection {
+          background-color: transparent;
+        }
         @media screen and (max-width: 1320px) {
             width: 250px;
             height: 250px;
@@ -74,25 +77,27 @@
             border: 1px solid #ff304f38;
             box-shadow: 0 0 14px 1px #28c7fa1a;
             margin: 11px;
-            transition: all 0.3s ease-in-out;
-            &:hover {
-              transform: translateY(-5px);
-            }
-        }
+            // transition: all 0.3s ease-in-out;
+            pointer-events: none;
 
-
-
-        h3 {
-          text-align: center;
-          color: #aba9a9;
-          font-weight: 500;
-          font-size: 2rem;
-          letter-spacing: 1px;
-          margin: 0 8px;
-          margin-top: 2rem;
-          transition: all 0.3s ease-in-out
         }
       }
+      &:hover {
+        // transform: translateY(-5px);
+      }
+
+      h3 {
+        text-align: center;
+        color: #aba9a9;
+        font-weight: 500;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin: 0 8px;
+        margin-top: 1rem;
+        transition: all 0.3s ease-in-out
+      }
+      &:hover h3 {color: #fff}
+
   }
 }
 
