@@ -71,7 +71,7 @@ const Player = () => {
 
   const handleChangeAudio = (audioIndex) => {
 
-
+    console.log(audioIndex);
     setCurrentMusicIndex(audioIndex);
 
   }

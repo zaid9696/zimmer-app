@@ -1,0 +1,25 @@
+
+.footer {
+
+  grid-column: full-start / full-end;
+  background-color: #28c7fa26;
+  padding: 1.09rem  0;
+  border-top: 1px solid #ff304f59;
+  text-align: center;
+  position: relative;
+  p {
+
+    font-size: 1.7rem;
+    font-weight: 100;
+    color: #b1afaf;
+    letter-spacing: 1px;
+    span {
+      color: var(--secondary-color);
+      font-weight: 400;
+      a{
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

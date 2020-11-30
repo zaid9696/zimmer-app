@@ -38,6 +38,7 @@ return  (
         volume: <img  src={volume} alt="volume button" />,
         volumeMute: <img  src={mute} alt="mute button" />,
       }}
+      customAdditionalControls={[]}
     />
   </div>
 

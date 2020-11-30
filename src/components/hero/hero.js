@@ -4,7 +4,11 @@ import React from 'react';
 import './hero.styles.scss';
 
 
-const Hero = () => (
+const Hero = () => {
+
+
+
+  return (
 
   <div className="hero">
         <div className="hero__circle-primry"></div>
@@ -12,6 +16,6 @@ const Hero = () => (
         <div className="hero__circle-secondary"></div>
   </div>
 );
-
+}
 
 export default Hero;

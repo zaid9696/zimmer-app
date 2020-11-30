@@ -42,9 +42,56 @@ class SliderCovers extends React.Component  {
       slidesToScroll: 2,
       focusOnSelect: true,
       arrows: false,
-
-
+      responsive: [
+        {
+          breakpoint: 1142,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        },
+        {
+          breakpoint: 900,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 630,
+          settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+          }
+        },
+      ]
     };
+
+    let clicks = [];
+    let timeout;
+
+  function singleClick(event) {
+
+  }
+
+  function doubleClick(event) {
+      const i = parseInt(event.dataset.index);
+      Click(i)
+
+  }
+
+    function clickHandler(event) {
+          event.preventDefault();
+          clicks.push(new Date().getTime());
+          window.clearTimeout(timeout);
+          timeout = window.setTimeout(() => {
+              if (clicks.length > 1 && clicks[clicks.length - 1] - clicks[clicks.length - 2] < 250) {
+                  doubleClick(event.target);
+              } else {
+                  singleClick(event.target);
+              }
+          }, 250);
+      }
 
 
       return (
@@ -53,9 +100,9 @@ class SliderCovers extends React.Component  {
         <Slider ref={slider => (this.slider = slider)} {...settings}>
         {
           listPlay.map((item, i) => (
-            <div key={i} onDoubleClick={() => Click(i)} className="slider__item">
+            <div key={i} onClick={clickHandler} className="slider__item">
             <div className="slider__item-content">
-            <img src={item.cover} alt={item.name} />
+            <img src={item.cover} alt={item.name} data-index={i} />
             <span className="slider__item-duration">{item.duration}</span>
             <h3>{item.name}</h3>
             </div>

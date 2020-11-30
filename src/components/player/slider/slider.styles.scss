@@ -5,6 +5,9 @@
 
     img {
       box-shadow: 0 0 16px 0px #ff3050db;
+      &:hover {
+        transform: translateY(0px);
+      }
     }
 
     h3 {
@@ -18,7 +21,8 @@
 
 
   margin: 0 8rem ;
-
+  touch-action: manipulation;
+  @media screen and (max-width: 630px) {margin: 0 2rem;}
   &__line {
     width: 100%;
     height: 3px;
@@ -39,6 +43,13 @@
       padding: 3px 7px;
       border-radius: 3px;
       font-weight: 100;
+      @media screen and (max-width: 630px) {
+
+        bottom: 65px;
+        right: 42px;
+        font-size: 2.3rem;
+      }
+
     }
       &-content {
         // margin: 0 2rem;
@@ -46,6 +57,15 @@
         &:hover h3 {color: #fff}
         width: 300px;
         height: 300px;
+        @media screen and (max-width: 1320px) {
+            width: 250px;
+            height: 250px;
+        }
+        @media screen and (max-width: 630px) {
+            width: 100%;
+            height: 100%;
+        }
+
         cursor: pointer;
         img{
           width: 92%;
@@ -54,6 +74,10 @@
             border: 1px solid #ff304f38;
             box-shadow: 0 0 14px 1px #28c7fa1a;
             margin: 11px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              transform: translateY(-5px);
+            }
         }
 
 

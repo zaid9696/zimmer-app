@@ -10,6 +10,9 @@ html {
 
   font-family: 'Libre Franklin', sans-serif;
   font-size: 62.2%;
+  @media  screen and (max-width: 830px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -19,10 +22,17 @@ body {
   box-sizing: border-box;
 }
 
+
+
 .main{
 
   display: grid;
   grid-template-columns: [full-start] minmax(2rem,1fr) [center-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-start]) [center-end] minmax(2rem, 1fr) [full-end];
   background-color: var(--third-color);
   overflow: hidden;
+
+  .ringtone {
+    visibility: hidden;
+    transform: translateY(-191px);
+  }
 }
