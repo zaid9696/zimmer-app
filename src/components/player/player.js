@@ -56,12 +56,12 @@ const Player = () => {
   const handleIsPlaying = (falseOrTrue) => {
 
       setIsPlaying(falseOrTrue);
-      console.log(isPlaying);
+
   }
 
   const handleClickPrev = () => {
 
-    // console.log(currentMusicIndex);
+
     setCurrentMusicIndex((prevState) => prevState === 0 || prevState === null ? playList.length - 1 : prevState - 1);
   }
 
@@ -71,7 +71,6 @@ const Player = () => {
 
   const handleChangeAudio = (audioIndex) => {
 
-    console.log(audioIndex);
     setCurrentMusicIndex(audioIndex);
 
   }

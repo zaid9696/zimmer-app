@@ -4,6 +4,12 @@
   width: 70%;
   margin: auto;
   margin-bottom: 8rem;
+  @media screen and (max-width: 650px) {
+
+      width: 97%;
+      margin-bottom: 3rem;
+  }
+
 
   .rhap_container {
 
@@ -65,12 +71,34 @@
 
       width: 90%;
       height: 90%;
+      @media screen and (max-width: 500px) {
+        width: 85%;
+        height: 85%;
+      }
 
       &.arrows {
         width: 77%;
         height: 77%;
+        @media screen and (max-width: 500px) {
+          width: 60%;
+          height: 60%;
+        }
       }
 // box-shadow: 0 0 5px 0 #ff305054;
     }
+  }
+
+  .rhap_volume-controls {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+
+  }
+
+  .rhap_main-controls {
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+
   }
 }

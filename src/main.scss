@@ -15,6 +15,11 @@ html {
   }
 }
 
+::selection {
+  background-color: var(--secondary-color);
+  color: #fff
+}
+
 body {
 
   margin: 0;

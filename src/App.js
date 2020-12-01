@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 import ringtone from './assets/audio/ringtone.mp3';
@@ -15,15 +15,11 @@ import './main.scss';
 
 function App() {
 
-  const [pause, setPause] = useState(false);
 
-
-  setTimeout(() => {setPause(true)} ,1000);
-  console.log(pause);
 
   return (
     <div className="main">
-    <div className="ringtone"><AudioPlayer src={ringtone} muted={pause} autoPlay={true} /></div>
+    <div className="ringtone"><AudioPlayer src={ringtone}  autoPlay={true} /></div>
         <Nav />
         <Switch>
             <Route exact path="/" component={Home} />

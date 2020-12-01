@@ -10,7 +10,7 @@ const MusicSpinner = ({playList, musicIndex, isPlaying}) => {
 
       musicIndex === null ? checkIndex = 0 : checkIndex = musicIndex;
       const playerCover = playList.filter((item) => item.id === checkIndex);
-      console.log(playerCover);
+
 
     return (
       <div className="musicSpinner">

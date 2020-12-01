@@ -43,6 +43,7 @@
 
     &__info {
       width: 70%;
+      @media screen and (max-width: 630px) {width: 90%}
       margin: auto;
       padding: 1.5rem;
       background-color: #0011275e;
