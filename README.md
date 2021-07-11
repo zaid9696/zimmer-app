@@ -1,2 +1,2 @@
-
-A react app with the top 10 film scores of Hans Zimmer
+I love Hans Zimmer’s music,
+So I built React App for the top 10
